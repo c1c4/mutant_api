@@ -1,0 +1,15 @@
+# app
+fastapi
+uvicorn
+pydantic
+
+# db
+alembic
+sqlalchemy
+psycopg2-binary
+
+# test
+pytest
+pytest-asyncio
+httpx
+asgi-lifespan
