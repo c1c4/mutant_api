@@ -1,6 +1,9 @@
 import os
 from starlette.config import Config
 from starlette.datastructures import Secret
+import logging
+
+logger = logging.getLogger(__name__)
 
 if os.environ.get('ENV') is None:
 
@@ -24,4 +27,5 @@ else:
     POSTGRES_DB = os.environ.get('POSTGRES_DB', 'db')
     CLOUD_SQL_INSTANCE_NAME = os.environ.get('POSTGRES_DB', 'my-project:region:instance-name')
     # DATABASE_URL = f'postgresql+psycopg2://{POSTGRES_USER}@{POSTGRES_SERVER}:{POSTGRES_PORT}/{POSTGRES_DB}'
-    DATABASE_URL = f'postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@/{POSTGRES_DB}?unix_socket=/cloudsql/{CLOUD_SQL_INSTANCE_NAME}/.s.PGSQL.5432'
+    DATABASE_URL = f'postgresql+psycopg2://{POSTGRES_USER}:{POSTGRES_PASSWORD}@/{POSTGRES_DB}?unix_socket=/cloudsql/{CLOUD_SQL_INSTANCE_NAME}/.s.PGSQL.5432'
+    logger.info(DATABASE_URL)
