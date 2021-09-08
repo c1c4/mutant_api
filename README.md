@@ -1,7 +1,7 @@
 # Mutant Api
 This api has the objective to get a DNA like this **["ATGCGA", "CAGTGC", "TTATGT", "AGAAGG", "CCCCTA", "TCACTG"]** and check if this DNA is from a **mutant** or a **human**
 
-If you want to test without clone the repository here the link to test in browser (Test in browser)[https://mutant-api-wbj4lkqt6a-ue.a.run.app/docs] or just the link to test with the postman https://mutant-api-wbj4lkqt6a-ue.a.run.app/docs
+If you want to test without clone the repository here the link to test in browser (Test in browser)[https://mutant-api-wbj4lkqt6a-ue.a.run.app/docs] or just the link to test with the postman https://mutant-api-wbj4lkqt6a-ue.a.run.app
 
 #
 ## The Api
