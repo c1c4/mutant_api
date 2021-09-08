@@ -4,7 +4,7 @@ services:
   server:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     volumes:
       - .:/mutant_api/
     command: uvicorn api.server:app --reload --workers 1 --host 0.0.0.0 --port 8000

@@ -1,18 +1,10 @@
 FROM python:3.8-slim-buster
 
-WORKDIR /mutant_api
+ENV APP_HOME /mutant_api
+ENV PORT 8000
+WORKDIR $APP_HOME
+COPY . ./
 
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONBUFFERED 1
-
-# install system dependencies
-RUN apt-get update \
-  && apt-get -y install netcat gcc postgresql \
-  && apt-get clean
-
-# install python dependencies
-RUN pip install --upgrade pip
-COPY ./requirements.txt /mutant_api/requirements.txt
 RUN pip install -r requirements.txt
 
-COPY . /mutant_api
+CMD exec gunicorn --bind :$PORT --workers 4 --worker-class uvicorn.workers.UvicornWorker  --threads 8 api.server:app
