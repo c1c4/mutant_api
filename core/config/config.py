@@ -28,5 +28,3 @@ else:
     REGION_DB = os.environ.get('REGION_DB', 'region')
     INSTANCE_DB = os.environ.get('INSTANCE_DB', 'instance-name')
     DATABASE_URL = f'postgresql+psycopg2://{POSTGRES_USER}:{POSTGRES_PASSWORD}@/{POSTGRES_DB}?host=/cloudsql/{PROJECT_DB}:{REGION_DB}:{INSTANCE_DB}'
-    print(DATABASE_URL)
-    logger.info(DATABASE_URL)
