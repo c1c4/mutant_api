@@ -19,7 +19,6 @@ if os.environ.get('ENV') is None:
 
     DATABASE_URL = f'postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_SERVER}:{POSTGRES_PORT}/{POSTGRES_DB}'
 else:
-    print('testing')
     POSTGRES_USER = os.environ.get('POSTGRES_USER', 'postgres')
     POSTGRES_PASSWORD = os.environ.get('POSTGRES_PASSWORD', 'pass')
     POSTGRES_SERVER = os.environ.get('POSTGRES_SERVER', 'db')
@@ -28,4 +27,5 @@ else:
     CLOUD_SQL_INSTANCE_NAME = os.environ.get('POSTGRES_DB', 'my-project:region:instance-name')
     # DATABASE_URL = f'postgresql+psycopg2://{POSTGRES_USER}@{POSTGRES_SERVER}:{POSTGRES_PORT}/{POSTGRES_DB}'
     DATABASE_URL = f'postgresql+psycopg2://{POSTGRES_USER}:{POSTGRES_PASSWORD}@/{POSTGRES_DB}?unix_socket=/cloudsql/{CLOUD_SQL_INSTANCE_NAME}/.s.PGSQL.5432'
+    print(DATABASE_URL)
     logger.info(DATABASE_URL)
