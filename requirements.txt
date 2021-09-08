@@ -1,6 +1,7 @@
 # app
 fastapi
 uvicorn
+gunicorn
 pydantic
 
 # db
