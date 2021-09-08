@@ -43,6 +43,7 @@ You can run the mutant api with two ways:
         docker ps
 
     You should see an output that starts with something that looks like the following:
+    
     CONTAINER ID | IMAGE
     ------------ | -----
     a123bc007edf | mutant_api
