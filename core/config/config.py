@@ -26,6 +26,6 @@ else:
     POSTGRES_DB = os.environ.get('POSTGRES_DB', 'db')
     CLOUD_SQL_INSTANCE_NAME = os.environ.get('POSTGRES_DB', 'my-project:region:instance-name')
     # DATABASE_URL = f'postgresql+psycopg2://{POSTGRES_USER}@{POSTGRES_SERVER}:{POSTGRES_PORT}/{POSTGRES_DB}'
-    DATABASE_URL = f'postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@/{POSTGRES_DB}?host=/cloudsql/{CLOUD_SQL_INSTANCE_NAME}'
+    DATABASE_URL = f'postgresql+pg8000://{POSTGRES_USER}:{POSTGRES_PASSWORD}@/{POSTGRES_DB}?host=/cloudsql/{CLOUD_SQL_INSTANCE_NAME}'
     print(DATABASE_URL)
     logger.info(DATABASE_URL)
